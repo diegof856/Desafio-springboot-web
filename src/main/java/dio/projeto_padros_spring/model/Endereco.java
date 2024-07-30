@@ -1,26 +1,28 @@
-package dio.projeto_padros_spring.model;
+package dio.projeto_padros_spring.model; // Define o pacote onde a classe Endereco está localizada
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.Entity; // Importa a anotação Entity do Jakarta Persistence
+import jakarta.persistence.GeneratedValue; // Importa a anotação GeneratedValue do Jakarta Persistence
+import jakarta.persistence.GenerationType; // Importa a enumeração GenerationType do Jakarta Persistence
+import jakarta.persistence.Id; // Importa a anotação Id do Jakarta Persistence
 
-@Entity
+@Entity // Anotação que indica que esta classe é uma entidade JPA, mapeada para uma tabela no banco de dados
 public class Endereco {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id_endereco;
-    private String cep;
-    private String logradouro;
-    private String complemento;
-    private String bairro;
-    private String localidade;
-    private String uf;
-    private String ibge;
-    private String gia;
-    private String ddd;
-    private String siafi;
+    @Id // Anotação que define o campo id_endereco como a chave primária da entidade
+    @GeneratedValue(strategy = GenerationType.AUTO) // Define que o valor da chave primária será gerado automaticamente pelo provedor de persistência
+    private Long id_endereco; // Campo para armazenar o identificador único da entidade Endereco
 
+    private String cep; // Campo para armazenar o CEP (Código de Endereçamento Postal)
+    private String logradouro; // Campo para armazenar o nome do logradouro (rua, avenida, etc.)
+    private String complemento; // Campo para armazenar informações adicionais do endereço (ex: apartamento, bloco)
+    private String bairro; // Campo para armazenar o bairro
+    private String localidade; // Campo para armazenar a localidade (cidade ou município)
+    private String uf; // Campo para armazenar a Unidade Federativa (estado)
+    private String ibge; // Campo para armazenar o código do IBGE (Instituto Brasileiro de Geografia e Estatística)
+    private String gia; // Campo para armazenar o código da GIA (Guia de Informação de Apuração do ICMS)
+    private String ddd; // Campo para armazenar o código DDD (Discagem Direta à Distância) do telefone
+    private String siafi; // Campo para armazenar o código SIAFI (Sistema de Administração dos Recursos de Tecnologia da Informação)
+
+    // Métodos getters e setters para acessar e modificar os campos da entidade
     public Long getId_endereco() {
         return id_endereco;
     }
